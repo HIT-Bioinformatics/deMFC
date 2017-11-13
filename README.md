@@ -1,4 +1,5 @@
 ###Introduction
+
 deMFC is a memory-flexible and multi-threaded de bruijn graph constructor. It is suitable for building and compacting de bruijn graph for multiple reference genomes and large re-sequencing datasets.
 
 deMFC is a parallel algorithm and it solved thoroughly the memory bottleneck problem using the method of block sorting and multi-way merging. deMFC gets the k-mers from the k-mer counter and build graph compacting directly in BWT sequence. deMFC also supports to parallelly transform BWT string to uni-paths in .fasta format.
@@ -8,6 +9,7 @@ deMFC is successful to construct graph for GenBank sequence database at level Co
 deMFC is mainly designed by Bo Liu and Hongzhe Guo, developed by Hongzhe Guo in Center for Bioinformatics, Harbin Institute of Technology, China.
 
 ###Memory requirement
+
 The memory usage and disk space usage of deMFC can fit the configurations of most modern servers and workstations. Its peak memory footprint can be configured by user and the peak disk space usage depends on the size of dataset and k-mer size, i.e.,1.7 TeraBytes for k=22 and 5.4 TeraBytes for k=62 on the GenBank Contig dataset; 14 TeraBytes for k=29 (abundance cutoff equals to 3)on the Picea abies re-sequencing dataset, on a server with Intel Xeon CPU at 2.00 GHz, 100 Gigabytes RAM running Linux CentOS 14.04.
 
 The wall time of the deMFC constructing graph for different datasets using diverse k-mer sizes is as follows. The time is in minutes.
@@ -24,6 +26,7 @@ No.	Dataset					K-mer size	Time
 ```
 
 ###Installation
+
 Current version of deMFC needs to be run on Linux operating system.  
 The source code is written in C, and can be directly download from: https://github.com/hitbc/deMFC  
 The makefile is attached. Use the make command for generating the executable file.  
@@ -31,6 +34,7 @@ Jellyfish2 should be properly installed on the system and can be added in the en
 export LD_LIBRARY_PATH=jellyfish_route/.libs
 
 ###Synopsis
+
 deMFC [options] \<jellyfish_route\> output_file \<source_route\>
 Build graph for reference or re-sequencing dataset
 
@@ -64,6 +68,7 @@ ubwt
 ```
 
 ###Quick start
+
 Graph constructing:
 deMFC jellyfish_route output_file source_route 
 BWT string transforming to uni-paths:
@@ -74,8 +79,10 @@ We simulated a dataset from Picea abies genome through ART Simulator (version 2.
 
 
 ###Reference
+
 deMFC: de bruijn graph construction and compaction in flexible memory.
 
 ###Contact
+
 For advising, bug reporting and requiring help, please contact ydwang@hit.edu.cn; hzguo@hit.edu.cn
 
